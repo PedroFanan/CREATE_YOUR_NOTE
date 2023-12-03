@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="nota.css">
+    <link rel="icon" href="fatura.png" type="image/x-icon">
+    <title>CREATE YOUR NOTE</title>
+</head>
+<body>
+    <menu>
+
+    </menu>
+    <h1>Emissão de Nota Fiscal de Serviço</h1>
+    <form>
+        <!-- Tomador do Serviço -->
+        <label for="tomador">Tomador do Serviço:</label>
+        <input type="text" id="tomador" name="tomador">
+
+        <!-- Estado, cidade e endereço completo -->
+        <label for="endereco">Endereço do Tomador:</label>
+        <textarea id="endereco" name="endereco"></textarea>
+
+        <!-- CNPJ/CPF do Tomador -->
+        <label for="cnpjCpf">CNPJ/CPF do Tomador:</label>
+        <input type="text" id="cnpjCpf" name="cnpjCpf">
+
+        <!-- Inscrição Municipal do Tomador -->
+        <label for="inscricaoMunicipal">Inscrição Municipal do Tomador:</label>
+        <input type="text" id="inscricaoMunicipal" name="inscricaoMunicipal">
+
+        <!-- Data de Emissão -->
+        <label for="dataEmissao">Data de Emissão:</label>
+        <input type="date" id="dataEmissao" name="dataEmissao">
+
+        <!-- Descrição dos Serviços -->
+        <label for="descricaoServicos">Descrição dos Serviços:</label>
+        <textarea id="descricaoServicos" name="descricaoServicos"></textarea>
+
+        <!-- Preço Unitário -->
+        <label for="precoUnitario">Preço Unitário:</label>
+        <input type="number" id="precoUnitario" name="precoUnitario" oninput="calcularImpostos()">
+
+        <!-- Total -->
+        <label for="total">Total:</label>
+        <input type="number" id="total" name="total" readonly>
+
+        <br>
+        <button type="button" onclick="gerarNotaFiscal()">Gerar Nota Fiscal</button>
+    </form>
+    <hr>
+    <div id="notaFiscal"></div>
+    
+    <script src="nota.js"></script>
+</body>
+</html>
